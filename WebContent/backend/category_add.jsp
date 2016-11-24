@@ -27,7 +27,7 @@
 					<div class="panel-heading">Form Elements</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form" method="post" action="${pageContext.request.contextPath}/admin/category/add"">
+							<form role="form" method="post" action="${pageContext.request.contextPath}/backend/category/add"">
 							
 								<div class="form-group">
 									<label>Category name</label>
