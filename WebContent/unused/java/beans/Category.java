@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ekart.entity;
+package com.ekart.user.entity;
 
 import java.util.ArrayList;
 

@@ -21,7 +21,7 @@ public class DBConnection {
     
     public void open() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lms", "root", "");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommdb", "root", "");
     }
     
     public PreparedStatement initStatement(String sql) throws SQLException{

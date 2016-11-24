@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ekart.entity.Category;
-import com.ekart.entity.Customer;
-import com.ekart.entity.Payment;
-import com.ekart.entity.Shipment;
-import com.ekart.dao.MainDAO;
+import com.ekart.user.entity.Category;
+import com.ekart.user.entity.Customer;
+import com.ekart.user.entity.Payment;
+import com.ekart.user.entity.Shipment;
+import com.ekart.user.dao.MainDAO;
 
 /**
  * Servlet implementation class MainController
