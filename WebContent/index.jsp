@@ -1,4 +1,4 @@
- <jsp:include page="site/includes/header.jsp"/>
+ <jsp:include page="WEB-INF/site/includes/header.jsp"/>
 
 
 
@@ -473,5 +473,5 @@
 
 
             
-<jsp:include page="site/includes/footer.jsp"/>
+<jsp:include page="WEB-INF/site/includes/footer.jsp"/>
 

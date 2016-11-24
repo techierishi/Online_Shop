@@ -18,14 +18,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/assets_site/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="${pageContext.request.contextPath}/assets_site/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <!-- js -->
-<script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets_site/js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/move-top.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/easing.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets_site/js/move-top.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets_site/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -36,11 +36,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- start-smoth-scrolling -->
 <!-- start menu -->
-<link href="${pageContext.request.contextPath}/assets/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/megamenu.js"></script>
+<link href="${pageContext.request.contextPath}/assets_site/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets_site/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<script src="${pageContext.request.contextPath}/assets/js/menu_jquery.js"></script>
-<script src="${pageContext.request.contextPath}/assets/js/simpleCart.min.js"> </script>
+<script src="${pageContext.request.contextPath}/assets_site/js/menu_jquery.js"></script>
+<script src="${pageContext.request.contextPath}/assets_site/js/simpleCart.min.js"> </script>
 <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
 </head>
 	

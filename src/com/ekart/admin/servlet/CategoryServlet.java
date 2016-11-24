@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.ekart.admin.service.CategoryService;
 import com.ekart.admin.service.impl.CategoryServiceImpl;
 import com.ekart.user.entity.Category;
+import com.ekart.util.Const;
 
 /**
  * Servlet implementation class AddCategoryServlet
  */
 @WebServlet("/backend/category/*")
-public class AddCategoryServlet extends HttpServlet {
+public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AddCategoryServlet() {
+	public CategoryServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -33,10 +34,15 @@ public class AddCategoryServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.setHeader( "Pragma", "no-cache" );
+		response.setHeader( "Cache-Control", "no-cache" );
+		response.setDateHeader( "Expires", 0 );
+		
+		System.out.println("GET home");
 
 		String pathInfo = request.getPathInfo();
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/add")) {
-			request.getRequestDispatcher("backend/category_add.jsp").forward(request, response);
+			request.getRequestDispatcher(Const.BAKEND+"category_add.jsp").forward(request, response);
 		}
 	}
 
@@ -52,7 +58,9 @@ public class AddCategoryServlet extends HttpServlet {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		request.getRequestDispatcher("backend/category_add.jsp").forward(request, response);
+		request.getSession().setAttribute("message", "Category Added successfully!");
+		response.sendRedirect(request.getContextPath()+"/backend/category/add");
+		//request.getRequestDispatcher(Const.BAKEND+"category_add.jsp").forward(request, response);
 
 	}
 
