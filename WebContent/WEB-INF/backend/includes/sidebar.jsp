@@ -30,12 +30,12 @@
 				</a>
 				<ul class="children collapse" id="sub-item-category">
 					<li>
-						<a class="" href="category_add.jsp">
+						<a class="backend/category/add" href="category_add.jsp">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Category Add
 						</a>
 					</li>
 					<li>
-						<a class="" href="#">
+						<a class="backend/category/list" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Category List
 						</a>
 					</li>

@@ -3,9 +3,11 @@ package com.ekart.admin.dao.impl;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.ekart.admin.dao.CategoryDao;
+import com.ekart.admin.entity.Admin;
 import com.ekart.user.entity.Category;
 import com.ekart.util.DBConnection;
 import com.ekart.util.Mail;
@@ -51,8 +53,19 @@ public class CategoryDaoImpl implements CategoryDao{
 
 	@Override
 	public List<Category> getAll() throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		 List<Category> entityList = new ArrayList<Category>();
+	        String SQL = "SELECT * FROM  category";
+	        conn.open();
+	        PreparedStatement pst = conn.initStatement(SQL);
+	        conn.close();
+	        ResultSet rs = pst.executeQuery();
+	        while(rs.next()){
+	            Category entityObj = new Category();
+	            entityObj.setCategory_name(rs.getString("categoryName"));
+	            entityObj.setCategory_detail(rs.getString("categoryDetails"));
+	            entityList.add(entityObj);
+	        }
+	        return entityList;
 	}
 
 	@Override

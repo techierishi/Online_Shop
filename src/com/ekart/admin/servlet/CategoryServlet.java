@@ -1,6 +1,8 @@
 package com.ekart.admin.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,37 +14,36 @@ import com.ekart.admin.service.impl.CategoryServiceImpl;
 import com.ekart.user.entity.Category;
 import com.ekart.util.Const;
 
-/**
- * Servlet implementation class AddCategoryServlet
- */
+
 @WebServlet("/backend/category/*")
 public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+	
 	public CategoryServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setHeader( "Pragma", "no-cache" );
 		response.setHeader( "Cache-Control", "no-cache" );
 		response.setDateHeader( "Expires", 0 );
 		
-		System.out.println("GET home");
-
 		String pathInfo = request.getPathInfo();
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/add")) {
 			request.getRequestDispatcher(Const.BAKEND+"category_add.jsp").forward(request, response);
+		}if (null != pathInfo && pathInfo.equalsIgnoreCase("/list")) {
+			
+			try{
+			CategoryService categoryService = new CategoryServiceImpl();
+			List<Category> categories = categoryService.getAll();
+			request.setAttribute("category_list", categories);			
+			request.getRequestDispatcher(Const.BAKEND+"category_list.jsp").forward(request, response);
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
 		}
 	}
 
@@ -64,10 +65,6 @@ public class CategoryServlet extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pathInfo = request.getPathInfo();

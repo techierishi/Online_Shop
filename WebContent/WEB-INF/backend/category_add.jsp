@@ -1,3 +1,4 @@
+<%@ taglib uri="../tlds/tlds.tld" prefix="e"%>
 <!DOCTYPE html>
 <html>
 <jsp:include page="includes/head.jsp"></jsp:include>
@@ -32,9 +33,10 @@
 						<div id="message_are"></div>
 						<div class="col-md-6">
 
+							<e:form isToken="true" css_class=""
+								action="${pageContext.request.contextPath}/backend/category/add"
+								id="" method="post">
 
-							<form role="form" method="post"
-								action="${pageContext.request.contextPath}/backend/category/add"">
 
 								<div class="form-group">
 									<label>Category name</label> <input type="text"
@@ -52,8 +54,7 @@
 									Button</button>
 
 
-							</form>
-
+							</e:form>
 						</div>
 					</div>
 				</div>
@@ -64,12 +65,12 @@
 
 	</div>
 	<!--/.main-->
-	
+
 
 	<jsp:include page="includes/script.jsp"></jsp:include>
 
 
-<script>
+	<script>
 		
 	<%String message_str = (String) request.getSession().getAttribute("message");
 			if (message_str != null && !message_str.isEmpty()) {
@@ -78,11 +79,7 @@
 				jQuery(document).ready(
 							function() {
 								jQuery("#message_are").html(ADMIN.showMessage('bg-success','<%=message_str%>'));
-					});
-				
-		
-			
-		
+				});
 	<%}%>
 		
 	</script>

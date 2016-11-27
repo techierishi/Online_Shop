@@ -34,8 +34,8 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public List<Category> getAll() throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return categoryDao.getAll();
 	}
 
 	@Override

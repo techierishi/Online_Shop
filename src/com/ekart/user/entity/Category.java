@@ -3,8 +3,6 @@
  */
 package com.ekart.user.entity;
 
-import java.util.ArrayList;
-
 /**
  * @author Rishikesh
  *
