@@ -15,9 +15,8 @@ import com.ekart.util.Mail;
 public class CategoryDaoImpl implements CategoryDao{
 
 	  private DBConnection conn;
-	    private Mail sendMail;
-
-	    public CategoryDaoImpl() {
+	  private Mail sendMail;
+	  public CategoryDaoImpl() {
 	        conn = new DBConnection();
 	        sendMail = new Mail();
 	    }
@@ -47,7 +46,6 @@ public class CategoryDaoImpl implements CategoryDao{
 
 	@Override
 	public int update(Category t) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -70,13 +68,11 @@ public class CategoryDaoImpl implements CategoryDao{
 
 	@Override
 	public int delete(int id) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public Category getById(int id) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

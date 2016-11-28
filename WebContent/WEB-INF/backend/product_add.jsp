@@ -1,4 +1,5 @@
 <%@ taglib uri="../tlds/tlds.tld" prefix="e"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <jsp:include page="includes/head.jsp"></jsp:include>
@@ -57,15 +58,16 @@
 								<div class="form-group">
 									<label>Product Category</label> <select class="form-control"
 										name="product_category">
-										<option>Option 1</option>
-										<option>Option 2</option>
-										<option>Option 3</option>
-										<option>Option 4</option>
+										<c:forEach items="${category_list}" var="category">
+											<option name="<c:out value="${category.category_name}" />">f<c:out value="${category.category_name}" /></option>	
+										</c:forEach>
 									</select>
 								</div>
 
 								<div class="form-group">
-								<label>Product Images</label> 
+									<input type="hidden" name="product_img_json"
+										id="product_img_json" > <label>Product
+										Images</label>
 									<div>
 
 										<input id="fileupload" type="file" name="files[]"
@@ -124,8 +126,7 @@
 				jQuery(document).ready(
 							function() {
 								
-								jQuery("#message_are").html(ADMIN.showMessage('bg-success','<%=message_str%>
-		'));
+								jQuery("#message_are").html(ADMIN.showMessage('bg-success','<%=message_str%>'));
 				});
 	<%}%>
 		

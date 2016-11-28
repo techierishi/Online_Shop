@@ -1,13 +1,21 @@
 $(function () {
  
+	var uploads=[];
+	// Clear on load
+	$('#product_img_json').val('');
+
     $('#fileupload').fileupload({
  
         dataType: 'json',
  
         done: function (e, data) {
             $("tr:has(td)").remove();
-            $.each(data.result, function (index, file) {
- 
+            uploads.push(data.result[0]);
+        	$('#product_img_json').val(JSON.stringify(uploads));
+            $.each(uploads, function (index, file) {
+            	
+            	
+
                 $("#uploaded-files").append(
                         $('<tr/>')
                         .append($('<td/>').html('<img class="img_preview" src="'+file.filePath+file.fileName+'"/>'))

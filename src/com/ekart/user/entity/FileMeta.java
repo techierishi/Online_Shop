@@ -53,6 +53,11 @@ public class FileMeta {
 	public void setContent(InputStream content) {
 		this.content = content;
 	}
- 	
+
+	@Override
+	public String toString() {
+		return "FileMeta [fileName=" + fileName + ", filePath=" + filePath + ", fileSize=" + fileSize + ", fileType="
+				+ fileType + "]";
+	}
     
 }

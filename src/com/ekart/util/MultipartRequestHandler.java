@@ -1,5 +1,6 @@
 package com.ekart.util;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,25 +39,27 @@ public class MultipartRequestHandler {
 				temp.setFileSize(part.getSize() / 1024 + " Kb");
 				temp.setFileType(part.getContentType());
 				temp.setContent(part.getInputStream());
-				
-	            InputStream is = part.getInputStream();
-
-	            String outputfile = request.getServletContext().getRealPath(Const.UPLOADS+fileName);  // get path on the server
-	            FileOutputStream os = new FileOutputStream (outputfile);
-	            
-	            // write bytes taken from uploaded file to target file
-	            int ch = is.read();
-	            while (ch != -1) {
-	                 os.write(ch);
-	                 ch = is.read();
-	            }
-	            
+					            
 				// 3.3 Add created FileMeta object to List<FileMeta> files
 				files.add(temp);
 
 			}
 		}
 		return files;
+	}
+
+	public static void uploadFileNow(HttpServletRequest request, String fileName, InputStream is)
+			throws FileNotFoundException, IOException {
+		String outputfile = request.getServletContext().getRealPath(Const.UPLOADS+fileName);  // get path on the server
+		FileOutputStream os = new FileOutputStream (outputfile);
+		
+		// write bytes taken from uploaded file to target file
+		int ch = is.read();
+		while (ch != -1) {
+		     os.write(ch);
+		     ch = is.read();
+		}
+		os.close();
 	}
 
 	// this method is used to get file name out of request headers

@@ -3,17 +3,22 @@
  */
 package com.ekart.user.entity;
 
+import java.util.List;
+
 /**
  * @author Rishikesh
  *
  */
 public class Product {
-	int productId;
-	String productName;
-	String categoryName;
-	String productAvailability;
-	int productQuantity;
-	int productPrice;
+	private int productId;
+	private String productName;
+	private String categoryName;
+	private String productAvailability;
+	private int productQuantity;
+	private int productPrice;
+	private String productDetails;
+	private List<ProductImage> productImages; 
+	
 	
 	public int getProductId() {
 		return productId;
@@ -51,6 +56,21 @@ public class Product {
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
+	
+	
+	public String getProductDetails() {
+		return productDetails;
+	}
+	public void setProductDetails(String productDetails) {
+		this.productDetails = productDetails;
+	}
+	public List<ProductImage> getProductImages() {
+		return productImages;
+	}
+	public void setProductImages(List<ProductImage> productImages) {
+		this.productImages = productImages;
+	}
+	
 	
 
 }
