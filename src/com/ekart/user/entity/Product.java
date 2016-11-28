@@ -12,6 +12,9 @@ public class Product {
 	String productName;
 	String categoryName;
 	String productAvailability;
+	int productQuantity;
+	int productPrice;
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -48,7 +51,6 @@ public class Product {
 	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
-	int productQuantity;
-	int productPrice;
+	
 
 }

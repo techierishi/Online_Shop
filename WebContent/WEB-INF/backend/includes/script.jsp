@@ -3,9 +3,17 @@
 	<script src="${pageContext.request.contextPath}/assets_backend/js/chart.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets_backend/js/chart-data.js"></script>
 	<script src="${pageContext.request.contextPath}/assets_backend/js/easypiechart.js"></script>
-	<script src="${pageContext.request.contextPath}/assets_backend/js/easypiechart-data.js"></script>
 	<script src="${pageContext.request.contextPath}/assets_backend/js/bootstrap-datepicker.js"></script>
 	<script src="${pageContext.request.contextPath}/assets_backend/js/admin.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/jquery.ui.core.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/jquery.ui.widget.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/jquery.ui.progressbar.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/easypiechart-data.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/jquery.iframe-transport.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/jquery.fileupload.js"></script>
+	<script src="${pageContext.request.contextPath}/assets_backend/js/fileupload.js"></script>
+
+ 
 	<script>
 		$('#calendar').datepicker({
 		});

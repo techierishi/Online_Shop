@@ -12,12 +12,12 @@
 				</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li>
-						<a class="" href="product_add.jsp">
+						<a class="" href="${pageContext.request.contextPath}/backend/product/add">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Product Add
 						</a>
 					</li>
 					<li>
-						<a class="" href="#">
+						<a class="" href="${pageContext.request.contextPath}/backend/product/list">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Product List
 						</a>
 					</li>
@@ -30,12 +30,12 @@
 				</a>
 				<ul class="children collapse" id="sub-item-category">
 					<li>
-						<a class="backend/category/add" href="category_add.jsp">
+						<a class="" href="${pageContext.request.contextPath}/backend/category/add">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Category Add
 						</a>
 					</li>
 					<li>
-						<a class="backend/category/list" href="#">
+						<a class="" href="${pageContext.request.contextPath}/backend/category/list">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Category List
 						</a>
 					</li>
