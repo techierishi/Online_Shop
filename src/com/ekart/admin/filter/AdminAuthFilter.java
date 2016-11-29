@@ -6,7 +6,7 @@
 package com.ekart.admin.filter;
 
 import java.io.IOException;
-import java.util.jar.Attributes;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebFilter(
         filterName = "adminAuthFilter",
-        urlPatterns = "/admin/*")
+        urlPatterns = "/backend/*")
 public class AdminAuthFilter implements Filter {
 
     @Override
@@ -45,15 +45,13 @@ public class AdminAuthFilter implements Filter {
         }
         if(!isAuthenticated){
             resp.sendRedirect(req.getContextPath());
-        }
-        else{
+        }else{
             chain.doFilter(req, resp);
         }
     }
 
     @Override
     public void destroy() {
-        
     }
     
 }

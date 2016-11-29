@@ -49,7 +49,7 @@
 								<tr>
 									<td><%=entity.getCategory_name()%></td>
 									<td><%=entity.getCategory_detail()%></td>
-									<td><button class="button">
+									<td><button class="btn btn-delete">
 											<svg class="glyph stroked cancel">
 												<use xlink:href="#stroked-cancel" /></svg>
 										</button></td>

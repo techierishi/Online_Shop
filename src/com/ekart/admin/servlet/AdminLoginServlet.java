@@ -5,8 +5,6 @@
  */
 package com.ekart.admin.servlet;
 
-
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,37 +20,52 @@ import javax.servlet.http.HttpSession;
 import com.ekart.admin.entity.Admin;
 import com.ekart.admin.service.AdminService;
 import com.ekart.admin.service.impl.AdminServiceImpl;
-
-
+import com.ekart.util.Const;
 
 /**
  *
  * @author Rishikesh
  */
-@WebServlet (urlPatterns = "/adminLogin")
-public class AdminLoginServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/admin/*")
+public class AdminLoginServlet extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        AdminService adminService = new AdminServiceImpl();
-        Admin admin=null;
-        try {
-            admin = adminService.authenticate(req.getParameter("email"), req.getParameter("password"));
-            if(admin!= null){
-                HttpSession session = req.getSession(true);
-                session.setAttribute("adminLogin", true);
-                session.setAttribute("admin", admin);
-                resp.sendRedirect(req.getContextPath()+"/admin/adminDashboard.jsp");
-            }
-             else{
-                resp.sendRedirect(req.getContextPath()+"?error=loginError");
-                }
-        } catch (SQLException ex) {
-            Logger.getLogger(AdminLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdminLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-    }
-    
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String pathInfo = req.getPathInfo();
+		if (null != pathInfo && pathInfo.equalsIgnoreCase("/login")) {
+			req.getRequestDispatcher(Const.BAKEND + "login.jsp").forward(req, resp);
+		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/logout")) {
+			HttpSession session = req.getSession(true);
+			session.invalidate();
+			resp.sendRedirect(req.getContextPath());
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		AdminService adminService = new AdminServiceImpl();
+		Admin admin = null;
+		try {
+			String pathInfo = req.getPathInfo();
+			if (null != pathInfo && pathInfo.equalsIgnoreCase("/login")) {
+				admin = adminService.authenticate(req.getParameter("email"), req.getParameter("password"));
+				if (admin != null) {
+					HttpSession session = req.getSession(true);
+					session.setAttribute("adminLogin", true);
+					session.setAttribute("admin", admin);
+					resp.sendRedirect(req.getContextPath() + "/backend/category/list");
+				} else {
+					resp.sendRedirect(req.getContextPath() + "?error=loginError");
+				}
+			}
+		} catch (SQLException ex) {
+			Logger.getLogger(AdminLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+		} catch (ClassNotFoundException ex) {
+			Logger.getLogger(AdminLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+		}
+
+	}
+
 }

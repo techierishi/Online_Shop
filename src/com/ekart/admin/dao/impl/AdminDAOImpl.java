@@ -114,7 +114,7 @@ public class AdminDAOImpl implements AdminDAO {
     @Override
     public Admin authenticate(String email, String password) throws SQLException, ClassNotFoundException {
         Admin admin=null;
-        String SQL = "SELECT * FROM tbl_admin WHERE email=? AND password=?";
+        String SQL = "SELECT * FROM admin WHERE  AdminEmail=? AND AdminPassword=?";
         conn.open();
         PreparedStatement pst = conn.initStatement(SQL);
         conn.close();
@@ -124,10 +124,8 @@ public class AdminDAOImpl implements AdminDAO {
         ResultSet rs =  pst.executeQuery();
         while(rs.next()){
             admin = new Admin();
-            admin.setFname(rs.getString("fname"));
-            admin.setLname(rs.getString("lname"));
-            admin.setEmail(rs.getString("email"));
-            admin.setPassword(rs.getString("password"));
+            admin.setEmail(rs.getString("AdminEmail"));
+            admin.setPassword(rs.getString("AdminPassword"));
         }
         return admin;
     }

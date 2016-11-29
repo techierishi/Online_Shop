@@ -8,13 +8,17 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Citizen Library</title>
-        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css"/>             
-        <link href="${pageContext.request.contextPath}/assets/css/style.css" rel="stylesheet" type="text/css"/>
-        <script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js" type="text/javascript"></script>
-    </head>
-    <body>
-        
-        <div class="container">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Citizen Library</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
+<link href="${pageContext.request.contextPath}/assets/css/style.css"
+	rel="stylesheet" type="text/css" />
+<script
+	src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"
+	type="text/javascript"></script>
+</head>
+<body>
+
+	<div class="container">
