@@ -57,7 +57,7 @@ public class AdminLoginServlet extends HttpServlet {
 					session.setAttribute("admin", admin);
 					resp.sendRedirect(req.getContextPath() + "/backend/category/list");
 				} else {
-					resp.sendRedirect(req.getContextPath() + "?error=loginError");
+					resp.sendRedirect(req.getContextPath() + "/admin/login?error=loginError");
 				}
 			}
 		} catch (SQLException ex) {

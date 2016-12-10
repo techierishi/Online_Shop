@@ -59,7 +59,7 @@
 									<label>Product Category</label> <select class="form-control"
 										name="product_category">
 										<c:forEach items="${category_list}" var="category">
-											<option name="<c:out value="${category.category_name}" />">f<c:out value="${category.category_name}" /></option>	
+											<option name="<c:out value="${category.category_name}" />"><c:out value="${category.category_name}" /></option>	
 										</c:forEach>
 									</select>
 								</div>

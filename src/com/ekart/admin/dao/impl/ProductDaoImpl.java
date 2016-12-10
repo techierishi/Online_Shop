@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ekart.admin.dao.ProductDao;
+import com.ekart.admin.dao.ProductImageDao;
 import com.ekart.user.entity.Product;
+import com.ekart.user.entity.ProductImage;
 import com.ekart.util.DBConnection;
 import com.ekart.util.Mail;
 
@@ -63,6 +65,7 @@ public class ProductDaoImpl implements ProductDao {
 	@Override
 	public List<Product> getAll() throws ClassNotFoundException, SQLException {
 		List<Product> entityList = new ArrayList<Product>();
+		ProductImageDao pDao = new ProductImageDaoImpl();
 		String SQL = "SELECT * FROM  product";
 		conn.open();
 		PreparedStatement pst = conn.initStatement(SQL);
@@ -70,12 +73,17 @@ public class ProductDaoImpl implements ProductDao {
 		ResultSet rs = pst.executeQuery();
 		while (rs.next()) {
 			Product entityObj = new Product();
+			entityObj.setProductId(rs.getInt("productId"));
 			entityObj.setProductName(rs.getString("productName"));
 			entityObj.setCategoryName(rs.getString("categoryName"));
 			entityObj.setProductAvailability(rs.getString("productAvailability"));
 			entityObj.setProductQuantity(rs.getInt("productQuantity"));
 			entityObj.setProductPrice(rs.getInt("productPrice"));
 			entityObj.setProductDetails(rs.getString("productDetails"));
+			
+			List<ProductImage> pImageList = pDao.getByProductId(entityObj);
+			
+			entityObj.setProductImages(pImageList);
 
 			entityList.add(entityObj);
 		}
