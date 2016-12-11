@@ -42,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product getById(int id) throws ClassNotFoundException, SQLException {
-		return null;
+		return productDao.getById(id);
 	}
 
 	@Override

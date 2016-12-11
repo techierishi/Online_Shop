@@ -11,7 +11,7 @@
 
 						<div class="products-grd">
 							<div class="p-one simpleCart_shelfItem prd">
-								<a href="single.html"> <img src="${pageContext.request.contextPath}/uploads/<c:out value="${product.productImages[0].imageName}" />" alt=""
+								<a href="${pageContext.request.contextPath}/product/detail?pid=<c:out value="${product.productId}" />"> <img src="${pageContext.request.contextPath}/uploads/<c:out value="${product.productImages[0].imageName}" />" alt=""
 									class="img-responsive" />
 									<div class="mask">
 										<span>Quick View</span>

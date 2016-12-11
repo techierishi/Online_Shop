@@ -80,9 +80,9 @@ public class ProductDaoImpl implements ProductDao {
 			entityObj.setProductQuantity(rs.getInt("productQuantity"));
 			entityObj.setProductPrice(rs.getInt("productPrice"));
 			entityObj.setProductDetails(rs.getString("productDetails"));
-			
+
 			List<ProductImage> pImageList = pDao.getByProductId(entityObj);
-			
+
 			entityObj.setProductImages(pImageList);
 
 			entityList.add(entityObj);
@@ -97,7 +97,30 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public Product getById(int id) throws ClassNotFoundException, SQLException {
-		return null;
+		Product entityObj = null;
+		ProductImageDao pDao = new ProductImageDaoImpl();
+		String SQL = "SELECT * FROM  product WHERE productId=?";
+		conn.open();
+		PreparedStatement pst = conn.initStatement(SQL);
+		pst.setInt(1, id);
+		conn.close();
+		ResultSet rs = pst.executeQuery();
+		while (rs.next()) {
+
+			entityObj = new Product();
+			entityObj.setProductId(rs.getInt("productId"));
+			entityObj.setProductName(rs.getString("productName"));
+			entityObj.setCategoryName(rs.getString("categoryName"));
+			entityObj.setProductAvailability(rs.getString("productAvailability"));
+			entityObj.setProductQuantity(rs.getInt("productQuantity"));
+			entityObj.setProductPrice(rs.getInt("productPrice"));
+			entityObj.setProductDetails(rs.getString("productDetails"));
+
+			List<ProductImage> pImageList = pDao.getByProductId(entityObj);
+
+			entityObj.setProductImages(pImageList);
+		}
+		return entityObj;
 	}
 
 	@Override
