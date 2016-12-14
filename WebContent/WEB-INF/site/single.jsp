@@ -94,7 +94,9 @@
 					<input min="1" type="number" id="quantity" name="quantity"
 						value="1" class="form-control input-small">
 					<div class="single-but item_add">
-						<input type="submit" value="add to cart">
+						<input type="hidden" name="pid" id="pid"
+							value="<c:out value="${product.productId}" />" />
+						<button id="add_to_cart">Add to Cart</button>
 					</div>
 				</div>
 				<div class="flower-type">
@@ -257,3 +259,24 @@
 <!-- single -->
 
 <jsp:include page="includes/footer.jsp" />
+
+<script type="text/javascript">
+	$("#add_to_cart").click(function() {
+		var pId = $("#pid").val();
+		var quantity = $("#quantity").val();
+		
+		var saveData = $.ajax({
+			type : 'GET',
+			url : "${pageContext.request.contextPath}/cart/add?pid=" + pId+"&quantity="+quantity,
+			dataType : "text",
+			success : function(resultData) {
+				console.log(resultData);
+				$("#simpleCart_quantity").html(resultData);
+			}
+		});
+		saveData.error(function() {
+			alert("Something went wrong");
+		});
+
+	});
+</script>
