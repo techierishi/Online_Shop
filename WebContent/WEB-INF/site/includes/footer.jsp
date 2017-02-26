@@ -35,9 +35,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<div class="footer-copy">
-		<p>© 2015 Pendent Store. All rights reserved | Design by <a href="http://w3layouts.com/"> W3layouts</a></p>
-	</div>
+	
 <!-- //footer -->
 </body>
 </html>

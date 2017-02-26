@@ -31,7 +31,7 @@ import javax.servlet.http.HttpSession;
  * @author Rishikesh
  */
 @WebServlet (urlPatterns = "/memberLogin")
-public class MemberLoginServlet extends HttpServlet{
+public class MemberServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -60,9 +60,9 @@ public class MemberLoginServlet extends HttpServlet{
                 resp.sendRedirect(req.getContextPath()+"/member/login.jsp?error=loginError");
                 }
         } catch (SQLException ex) {
-            Logger.getLogger(MemberLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MemberServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MemberLoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MemberServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
        
     }

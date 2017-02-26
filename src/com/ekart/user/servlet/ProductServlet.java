@@ -1,8 +1,6 @@
 package com.ekart.user.servlet;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,16 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-
-import com.ekart.admin.service.CategoryService;
 import com.ekart.admin.service.ProductService;
-import com.ekart.admin.service.impl.CategoryServiceImpl;
 import com.ekart.admin.service.impl.ProductServiceImpl;
-import com.ekart.user.entity.Category;
 import com.ekart.user.entity.FileMeta;
 import com.ekart.user.entity.Product;
-import com.ekart.user.entity.ProductImage;
 import com.ekart.util.Const;
 import com.ekart.util.MultipartRequestHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -61,9 +53,8 @@ public class ProductServlet extends HttpServlet {
 
 				Product product = productService.getById(Integer.parseInt(productId));
 				request.setAttribute("product", product);
-				 request.getRequestDispatcher(Const.SITE +
-				 "single.jsp").forward(request, response);
-				
+				request.getRequestDispatcher(Const.SITE + "single.jsp").forward(request, response);
+
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}

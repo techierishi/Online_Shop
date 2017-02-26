@@ -80,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="site/checkout.jsp">
 				<h3> <div class="total">
 					<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-					<img src="images/cart1.png" alt=""/></h3>
+					<img src="${pageContext.request.contextPath}/assets_site/images/cart1.png" alt=""/></h3>
 				</a>
 				<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 				<div class="clearfix"> </div>
@@ -97,79 +97,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <!-- start header menu -->
 		<ul class="megamenu skyblue">
 			<li class="active grid"><a class="color1" href="index.jsp">Home</a></li>
-			<li class="grid"><a class="color1" href="#">jewellery</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Popular Brands</h4>
-								<ul>
-									<li><a href="products.html">Slave Bracelets</a></li>
-									<li><a href="products.html">Rings</a></li>
-									<li><a href="products.html">Necklaces</a></li>
-									<li><a href="products.html">Chokers</a></li>
-									<li><a href="products.html">Cuff Links</a></li>									
-									<li><a href="products.html">Bangles</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Style Zone</h4>
-								<ul>
-									<li><a href="products.html">Men</a></li>
-									<li><a href="products.html">Women</a></li>
-									<li><a href="products.html">Brands</a></li>
-									<li><a href="products.html">Kids</a></li>
-									<li><a href="products.html">Accessories</a></li>
-									<li><a href="products.html">Style Videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>All Jewellery</h4>
-								<ul>
-									<li><a href="products.html">eum fugiat</a></li>
-									<li><a href="products.html">commodi consequatur</a></li>
-									<li><a href="products.html">illum qui dolorem</a></li>
-									<li><a href="products.html">nihil molestiae</a></li>
-									<li><a href="products.html">eum fugiat</a></li>
-									<li><a href="products.html">consequatur eum</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Seating</h4>
-								<ul>
-									<li><a href="products.html">eum fugiat</a></li>
-									<li><a href="products.html">commodi consequatur</a></li>
-									<li><a href="products.html">illum qui dolorem</a></li>
-									<li><a href="products.html">nihil molestiae</a></li>
-									<li><a href="products.html">eum fugiat</a></li>
-									<li><a href="products.html">consequatur eum</a></li>
-								</ul>	
-							</div>						
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    			</div>
+			<li class="grid"><a class="color1" href="#">Products</a>
+				
 			</li>
-			<li><a class="color1" href="#">catalog</a>
+			<li><a class="color1" href="#">Cart</a>
 			</li>				
-			<li><a class="color1" href="#">Sale</a>
+			<li><a class="color1" href="#">Contact</a>
 			</li>
-			<li><a class="color1" href="#">exclusive</a>
+			<li><a class="color1" href="#">About Us</a>
 			</li>				
-			<li><a  class="color1" href="#">collections</a>
-			</li>								
+										
 		</ul> 
 			<div class="search">
 				 <form>

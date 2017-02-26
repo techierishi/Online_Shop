@@ -6,7 +6,7 @@
 	<div class="banner">
 		<div class="container">
 <!-- Slider-starts-Here -->
-				<script src="js/responsiveslides.min.js"></script>
+				<script src="${pageContext.request.contextPath}/assets_site/js/responsiveslides.min.js"></script>
 				 <script>
 				    // You can also use "$(window).load(function() {"
 				    $(function () {
@@ -39,7 +39,7 @@
 										ut aut reiciendis voluptatibus maiores alias consequatur 
 										aut perferendis doloribus asperiores repellat.</p>
 									<div class="buy">
-										<a href="single.html">Explore</a>
+										<a href="#">Explore</a>
 									</div>
 								</div>
 							</div>
@@ -54,7 +54,7 @@
 										ut aut reiciendis voluptatibus maiores alias consequatur 
 										aut perferendis doloribus asperiores repellat.</p>
 									<div class="buy">
-										<a href="single.html">Explore</a>
+										<a href="#">Explore</a>
 									</div>
 								</div>
 							</div>
@@ -69,7 +69,7 @@
 										ut aut reiciendis voluptatibus maiores alias consequatur 
 										aut perferendis doloribus asperiores repellat.</p>
 									<div class="buy">
-										<a href="single.html">Explore</a>
+										<a href="#">Explore</a>
 									</div>
 								</div>
 							</div>
@@ -91,22 +91,22 @@
 				<ul id="flexiselDemo1">			
 					<li>
 						<div class="sliderfig-grid">
-							<img src="${pageContext.request.contextPath}/assets/images/a.jpg" alt=" " class="img-responsive" />
+							<img src="${pageContext.request.contextPath}/assets_site/images/a.jpg" alt=" " class="img-responsive" />
 						</div>
 					</li>
 					<li>
 						<div class="sliderfig-grid">
-							<img src="${pageContext.request.contextPath}/assets/images/b.jpg" alt=" " class="img-responsive" />
+							<img src="${pageContext.request.contextPath}/assets_site/images/b.jpg" alt=" " class="img-responsive" />
 						</div>
 					</li>
 					<li>
 						<div class="sliderfig-grid">
-							<img src="${pageContext.request.contextPath}/assets/images/c.jpg" alt=" " class="img-responsive" />
+							<img src="${pageContext.request.contextPath}/assets_site/images/c.jpg" alt=" " class="img-responsive" />
 						</div>
 					</li>
 					<li>
 						<div class="sliderfig-grid">
-							<img src="${pageContext.request.contextPath}/assets/images/d.jpg" alt=" " class="img-responsive" />
+							<img src="${pageContext.request.contextPath}/assets_site/images/d.jpg" alt=" " class="img-responsive" />
 						</div>
 					</li>
 					</ul>
@@ -137,67 +137,21 @@
 								
 							});
 					</script>
-					<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+					<script type="text/javascript" src="${pageContext.request.contextPath}/assets_site/js/jquery.flexisel.js"></script>
 			</div>
 <!-- //slider -->
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-<!-- //cate -->
-<!-- cate-bottom -->
-	<div class="cate-bottom">
-		<div class="container">
-			<div class="cate-bottom-info">
-				<h3>New Collections</h3>
-				<p>consequuntur magni dolores eos qui ratione voluptatem doloribus asperiores 
-				repellat molestiae non recusandae
-				<span>perferendis doloribus asperiores repellat</span></p>
-				<div class="buy let">
-					<a href="single.html">Read More</a>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- //cate-bottom -->
-<!-- welcome -->
-	<div class="welcome">
-		<div class="container">
-			<div class="welcome-info">
-				<h3>Welcome To Our Store!</h3>
-				<p class="non">Repellat molestiae non recusandae<span>Asperiores repellat</span></p>
-				<p class="rep">Perferendis doloribus asperiores repellat</p>
-				<div class="buy wel">
-					<a href="single.html">Read More</a>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- //welcome -->
+
 <!-- banner-bottom1 -->
 	<div class="banner-bottom1">
 		<div class="container">
 			<div class="banner-bottom1-grids">
-				<div class="banner-bot-grd">
-					<div class="col-md-7 banner-bot-grid">
-						<div class="jel-video">
-							<iframe src="https://player.vimeo.com/video/45541146" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-						</div>
-					</div>
-					<div class="col-md-5 banner-bot-grid">
-						<div class="banner-bot-grid1">
-							<img src="${pageContext.request.contextPath}/assets/images/a3.jpg" alt=" " class="img responsive" />
-							<div class="pos-absolt">
-								<h3>omnis voluptas assumenda</h3>
-								<p>Temporibus autem quibusdam et aut officiis debitis aut 
-								rerum necessitatibus saepe eveniet ut et voluptates.</p>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+				
 				<div class="col-md-4 banner-bottom1-grid">
 					<div class="banner-bottom1-grid1">
-						<img src="${pageContext.request.contextPath}/assets/images/6.jpg" alt=" " class="img-responsive" />
+						<img src="${pageContext.request.contextPath}/assets_site/images/6.jpg" alt=" " class="img-responsive" />
 						<div class="head-para">
 							<h3>omnis voluptas assumenda</h3>
 							<p>Temporibus autem quibusdam et aut officiis debitis aut 
@@ -207,7 +161,7 @@
 				</div>
 				<div class="col-md-4 banner-bottom1-grid">
 					<div class="banner-bottom1-grid1">
-						<img src="${pageContext.request.contextPath}/assets/images/5.jpg" alt=" " class="img-responsive" />
+						<img src="${pageContext.request.contextPath}/assets_site/images/5.jpg" alt=" " class="img-responsive" />
 						<div class="head-para">
 							<h3>omnis voluptas assumenda</h3>
 							<p>Temporibus autem quibusdam et aut officiis debitis aut 
@@ -217,7 +171,7 @@
 				</div>
 				<div class="col-md-4 banner-bottom1-grid">
 					<div class="banner-bottom1-grid1">
-						<img src="${pageContext.request.contextPath}/assets/images/7.jpg" alt=" " class="img-responsive" />
+						<img src="${pageContext.request.contextPath}/assets_site/images/7.jpg" alt=" " class="img-responsive" />
 						<div class="head-para">
 							<h3>omnis voluptas assumenda</h3>
 							<p>Temporibus autem quibusdam et aut officiis debitis aut 
@@ -236,15 +190,15 @@
 			<div class="product-one">
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">							
-							<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/1-.jpg" alt="" class="img-responsive" />
+							<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/1-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 							</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -255,15 +209,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/3-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/3-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -274,15 +228,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/2-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/2-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -293,15 +247,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/4-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/4-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -312,15 +266,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">							
-							<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/5-.jpg" alt="" class="img-responsive" />
+							<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/5-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 							</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -331,15 +285,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/6-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/6-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -353,15 +307,15 @@
 			<div class="product-one">
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">							
-							<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/7-.jpg" alt="" class="img-responsive" />
+							<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/7-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 							</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -372,15 +326,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/13-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/13-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -391,15 +345,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/9-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/9-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -410,15 +364,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/10-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/10-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -429,15 +383,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">							
-							<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/11-.jpg" alt="" class="img-responsive" />
+							<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/11-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 							</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
@@ -448,15 +402,15 @@
 				</div>
 				<div class="col-md-2 product-left"> 
 					<div class="p-one simpleCart_shelfItem jwe">
-						<a href="single.html">
-								<img src="${pageContext.request.contextPath}/assets/images/12-.jpg" alt="" class="img-responsive" />
+						<a href="#">
+								<img src="${pageContext.request.contextPath}/assets_site/images/12-.jpg" alt="" class="img-responsive" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 						</a>
 						<div class="product-left-cart">
 							<div class="product-left-cart-l">
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$729</span></a></p>
+								<p><a class="item_add" href="#"><i></i> <span class=" item_price">Sample</span></a></p>
 							</div>
 							<div class="product-left-cart-r">
 								<a href="#"> </a>
