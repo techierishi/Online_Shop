@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ekart.admin.service.CategoryService;
-import com.ekart.admin.service.impl.CategoryServiceImpl;
+import com.ekart.admin.dao.CategoryDao;
+import com.ekart.admin.dao.impl.CategoryDaoImpl;
 import com.ekart.user.entity.Category;
 import com.ekart.util.Const;
 
@@ -37,8 +37,8 @@ public class CategoryServlet extends HttpServlet {
 		}if (null != pathInfo && pathInfo.equalsIgnoreCase("/list")) {
 			
 			try{
-			CategoryService categoryService = new CategoryServiceImpl();
-			List<Category> categories = categoryService.getAll();
+			CategoryDao CategoryDao = new CategoryDaoImpl();
+			List<Category> categories = CategoryDao.getAll();
 			request.setAttribute("category_list", categories);			
 			request.getRequestDispatcher(Const.BAKEND+"category_list.jsp").forward(request, response);
 			}catch(Exception ex){
@@ -48,14 +48,14 @@ public class CategoryServlet extends HttpServlet {
 	}
 
 	private void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
-		CategoryService categoryService = new CategoryServiceImpl();
+		CategoryDao CategoryDao = new CategoryDaoImpl();
 		String category_name = request.getParameter("category_name");
 		String category_detail = request.getParameter("category_detail");
 		try {
 			Category category = new Category();
 			category.setCategory_name(category_name);
 			category.setCategory_detail(category_detail);
-			categoryService.insert(category);
+			CategoryDao.insert(category);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

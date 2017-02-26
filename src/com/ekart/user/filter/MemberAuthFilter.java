@@ -22,9 +22,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Rishikesh
  */
-@WebFilter(
-        filterName = "memberAuthFilter",
-        urlPatterns = "/member/*")
+@WebFilter("/customer/*")
 public class MemberAuthFilter implements Filter {
 
     @Override
@@ -39,7 +37,7 @@ public class MemberAuthFilter implements Filter {
         Boolean isAuthenticated = false;
         HttpSession session = req.getSession();
         if(session!=null){
-            if (session.getAttribute("member")!=null){
+            if (session.getAttribute("customer")!=null){
                 isAuthenticated=true;
             }
         }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2016 at 07:52 PM
+-- Generation Time: Feb 26, 2017 at 08:08 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -33,7 +33,36 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `AdminPhone` varchar(45) NOT NULL,
   `AdminPassword` varchar(45) NOT NULL,
   PRIMARY KEY (`AdminId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`AdminId`, `AdminName`, `AdminEmail`, `AdminPhone`, `AdminPassword`) VALUES
+(1, 'rishikesh', 'rishikesh@gmail.com', '987654323', 'Password1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE IF NOT EXISTS `cart` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pid` int(10) NOT NULL,
+  `uid` int(10) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `productName` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `pid`, `uid`, `quantity`, `productName`) VALUES
+(1, 5, 1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -46,6 +75,16 @@ CREATE TABLE IF NOT EXISTS `category` (
   `categoryDetails` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`categoryName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`categoryName`, `categoryDetails`) VALUES
+('Bangles', 'Good bangles'),
+('Necklace', 'Good necklaces'),
+('Pendent', 'Pendent Category'),
+('Ring', 'Awesome rings');
 
 -- --------------------------------------------------------
 
@@ -132,8 +171,47 @@ CREATE TABLE IF NOT EXISTS `product` (
   `productQuantity` int(11) DEFAULT '0',
   `productPrice` int(11) DEFAULT NULL,
   `supplierId` int(11) DEFAULT NULL,
+  `productDetails` text NOT NULL,
   PRIMARY KEY (`productId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`productId`, `productName`, `categoryName`, `productAvailability`, `productQuantity`, `productPrice`, `supplierId`, `productDetails`) VALUES
+(5, 'Rani Har', 'Necklace', 'Available', 40, 45000, 0, 'null'),
+(6, 'China Har', 'Necklace', 'Available', 30, 60000, 0, 'null'),
+(7, 'Rani Har2', 'Necklace', 'Available', 40, 45000, 0, 'null'),
+(8, 'Kar Har', 'Necklace', 'Available', 40, 560000, 0, 'null');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_image`
+--
+
+CREATE TABLE IF NOT EXISTS `product_image` (
+  `imageId` int(11) NOT NULL AUTO_INCREMENT,
+  `pId` int(11) NOT NULL,
+  `imageName` varchar(255) NOT NULL,
+  PRIMARY KEY (`imageId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+
+--
+-- Dumping data for table `product_image`
+--
+
+INSERT INTO `product_image` (`imageId`, `pId`, `imageName`) VALUES
+(7, 5, '6854ac9b-22b8-474e-bf8c-696a907594521.jpg'),
+(8, 5, 'f481d7de-3289-45c1-b011-527d2e8a3d8e1-.jpg'),
+(9, 6, '576acc80-19c6-445a-8afd-d1c3976677cf5-.jpg'),
+(10, 6, 'e468550c-b91f-4116-b9d6-e53a33c5d1342.jpg'),
+(11, 7, '1b3a57f1-70d4-4c7a-92ba-9d2cb42125e51.jpg'),
+(12, 7, '6554ce43-1748-48fd-906c-555764043cb52-.jpg'),
+(13, 7, '021ddfbc-58e2-4ad1-91a3-9e946dabbfb21.jpg'),
+(14, 8, '48f3e225-637e-4f82-8980-b51a7fadf7963.jpg'),
+(15, 8, '83f167f1-dc8f-4a9b-a7bd-dffbc2f337fe4.jpg');
 
 -- --------------------------------------------------------
 

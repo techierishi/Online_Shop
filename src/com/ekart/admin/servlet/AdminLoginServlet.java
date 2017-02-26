@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.ekart.admin.dao.AdminDAO;
+import com.ekart.admin.dao.impl.AdminDAOImpl;
 import com.ekart.admin.entity.Admin;
-import com.ekart.admin.service.AdminService;
-import com.ekart.admin.service.impl.AdminServiceImpl;
 import com.ekart.util.Const;
 
 /**
@@ -45,12 +45,12 @@ public class AdminLoginServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		AdminService adminService = new AdminServiceImpl();
+		AdminDAO AdminDAO = new AdminDAOImpl();
 		Admin admin = null;
 		try {
 			String pathInfo = req.getPathInfo();
 			if (null != pathInfo && pathInfo.equalsIgnoreCase("/login")) {
-				admin = adminService.authenticate(req.getParameter("email"), req.getParameter("password"));
+				admin = AdminDAO.authenticate(req.getParameter("email"), req.getParameter("password"));
 				if (admin != null) {
 					HttpSession session = req.getSession(true);
 					session.setAttribute("adminLogin", true);

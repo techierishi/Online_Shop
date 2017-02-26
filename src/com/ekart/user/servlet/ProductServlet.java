@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ekart.admin.service.ProductService;
-import com.ekart.admin.service.impl.ProductServiceImpl;
+import com.ekart.admin.dao.ProductDao;
+import com.ekart.admin.dao.impl.ProductDaoImpl;
 import com.ekart.user.entity.FileMeta;
 import com.ekart.user.entity.Product;
 import com.ekart.util.Const;
 import com.ekart.util.MultipartRequestHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@WebServlet(name = "ProductServlet1", urlPatterns = { "/product/*" })
+@WebServlet("/product/*")
 public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -37,8 +37,8 @@ public class ProductServlet extends HttpServlet {
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/list")) {
 
 			try {
-				ProductService productService = new ProductServiceImpl();
-				List<Product> products = productService.getAll();
+				ProductDao ProductDao = new ProductDaoImpl();
+				List<Product> products = ProductDao.getAll();
 				request.setAttribute("product_list", products);
 				request.getRequestDispatcher(Const.SITE + "products.jsp").forward(request, response);
 			} catch (Exception ex) {
@@ -47,11 +47,11 @@ public class ProductServlet extends HttpServlet {
 		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/detail")) {
 
 			try {
-				ProductService productService = new ProductServiceImpl();
+				ProductDao ProductDao = new ProductDaoImpl();
 
 				String productId = request.getParameter("pid");
 
-				Product product = productService.getById(Integer.parseInt(productId));
+				Product product = ProductDao.getById(Integer.parseInt(productId));
 				request.setAttribute("product", product);
 				request.getRequestDispatcher(Const.SITE + "single.jsp").forward(request, response);
 

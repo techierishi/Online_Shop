@@ -1,22 +1,17 @@
 package com.ekart.user.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.ekart.admin.service.CategoryService;
-import com.ekart.admin.service.impl.CategoryServiceImpl;
-import com.ekart.user.entity.Category;
+import com.ekart.user.dao.CustomerDao;
+import com.ekart.user.dao.impl.CustomerDaoImpl;
 import com.ekart.user.entity.Customer;
-import com.ekart.user.service.CustomerService;
-import com.ekart.user.service.impl.CustomerServiceImpl;
 import com.ekart.util.Const;
 
 @WebServlet("/user/*")
@@ -34,6 +29,13 @@ public class UserServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/login")) {
+			try {
+
+				request.getRequestDispatcher(Const.SITE + "login.jsp").forward(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
@@ -41,17 +43,29 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			Customer cust = new Customer();
+			CustomerDao customerDao = new CustomerDaoImpl();
+			HttpSession session = request.getSession(true);
+			String pathInfo = request.getPathInfo();
+			if (null != pathInfo && pathInfo.equalsIgnoreCase("/register")) {
 
-			cust.setName(request.getParameter("fname") + " " + request.getParameter("lname"));
-			cust.setEmail(request.getParameter("email"));
-			cust.setPhone(request.getParameter("phone"));
-			cust.setPassword(request.getParameter("password"));
+				Customer cust = new Customer();
 
-			CustomerService customerService = new CustomerServiceImpl();
-			int ret = customerService.insert(cust);
-			
-			response.sendRedirect(request.getContextPath() + "/user/register");
+				cust.setName(request.getParameter("fname") + " " + request.getParameter("lname"));
+				cust.setEmail(request.getParameter("email"));
+				cust.setPhone(request.getParameter("phone"));
+				cust.setPassword(request.getParameter("password"));
+
+				int ret = customerDao.insert(cust);
+				response.sendRedirect(request.getContextPath() + "/user/register?msg=Registration Successfull");
+				
+			} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/login")) {
+				String username = request.getParameter("name");
+				String password = request.getParameter("password");
+				Customer cObj = customerDao.login(username, password);
+				session.setAttribute("customer", cObj);
+				response.sendRedirect(request.getContextPath() + "/customer/cart/list?msg=Login Successfull");
+
+			}
 		} catch (Exception ex) {
 		}
 	}

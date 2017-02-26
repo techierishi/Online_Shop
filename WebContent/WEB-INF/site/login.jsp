@@ -9,11 +9,11 @@
 					 <div class="strip"></div>
 					 <p>Welcome, please enter the following to continue.</p>
 					 <p>If you have previously Login with us, <a href="#">Click Here</a></p>
-					 <form>
+					 <form action="${pageContext.request.contextPath}/user/login" method="post">
 						 <h5>User Name:</h5>	
-						 <input type="text" value="">
+						 <input type="text"  name="name" value="">
 						 <h5>Password:</h5>
-						 <input type="password" value="">					
+						 <input type="password" name="password" value="">					
 						 <input type="submit" value="Login">
 						  
 					 </form>
@@ -23,12 +23,12 @@
 					<h3>New Registration</h3>
 					<div class="strip"></div>
 					<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-					<a href="register.html" class="button">Create An Account</a>
+					<a href="${pageContext.request.contextPath}/user/resiter" class="button">Create An Account</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>
 <!-- //login-page -->
- <jsp:include page="includes/header.jsp"/>
+ <jsp:include page="includes/footer.jsp"/>
 

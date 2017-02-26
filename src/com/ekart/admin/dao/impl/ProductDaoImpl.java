@@ -49,8 +49,9 @@ public class ProductDaoImpl implements ProductDao {
 			conn.close();
 			i = pst.executeUpdate();
 			// Get last id
+			
 			ResultSet rs2 = pst.getGeneratedKeys();
-			if (rs.next()) {
+			if (rs2.next()) {
 				i = rs2.getInt(1);
 			}
 			return i;

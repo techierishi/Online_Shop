@@ -15,10 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
 
-import com.ekart.admin.service.CategoryService;
-import com.ekart.admin.service.ProductService;
-import com.ekart.admin.service.impl.CategoryServiceImpl;
-import com.ekart.admin.service.impl.ProductServiceImpl;
+import com.ekart.admin.dao.CategoryDao;
+import com.ekart.admin.dao.ProductDao;
+import com.ekart.admin.dao.ProductImageDao;
+import com.ekart.admin.dao.impl.CategoryDaoImpl;
+import com.ekart.admin.dao.impl.ProductDaoImpl;
+import com.ekart.admin.dao.impl.ProductImageDaoImpl;
 import com.ekart.user.entity.Category;
 import com.ekart.user.entity.FileMeta;
 import com.ekart.user.entity.Product;
@@ -46,8 +48,8 @@ public class ProductServlet extends HttpServlet {
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/add")) {
 
 			try {
-				CategoryService categoryService = new CategoryServiceImpl();
-				List<Category> categories = categoryService.getAll();
+				CategoryDao CategoryDao = new CategoryDaoImpl();
+				List<Category> categories = CategoryDao.getAll();
 				request.setAttribute("category_list", categories);
 				request.getRequestDispatcher(Const.BAKEND + "product_add.jsp").forward(request, response);
 			} catch (ClassNotFoundException e) {
@@ -60,8 +62,8 @@ public class ProductServlet extends HttpServlet {
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/list")) {
 
 			try {
-				CategoryService categoryService = new CategoryServiceImpl();
-				List<Category> categories = categoryService.getAll();
+				CategoryDao CategoryDao = new CategoryDaoImpl();
+				List<Category> categories = CategoryDao.getAll();
 				request.setAttribute("category_list", categories);
 				request.getRequestDispatcher(Const.BAKEND + "category_list.jsp").forward(request, response);
 			} catch (Exception ex) {
@@ -73,7 +75,8 @@ public class ProductServlet extends HttpServlet {
 	private void addProduct(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		ProductService entityService = new ProductServiceImpl();
+		ProductDao entityService = new ProductDaoImpl();
+		ProductImageDao pDaoImg= new ProductImageDaoImpl();
 
 		try {
 
@@ -104,7 +107,7 @@ public class ProductServlet extends HttpServlet {
 			int ins = entityService.insert(product);
 			
 			product.setProductId(ins);
-			entityService.insertImage(product, productImages);
+			pDaoImg.insert(product, productImages);
 			
 
 		} catch (Exception ex) {

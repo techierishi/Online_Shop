@@ -9,7 +9,7 @@ import com.ekart.user.dao.CustomerDao;
 import com.ekart.user.entity.Customer;
 import com.ekart.util.DBConnection;
 
-public class CustomerDaoImpl implements CustomerDao{
+public class CustomerDaoImpl implements CustomerDao {
 	private DBConnection conn;
 
 	public CustomerDaoImpl() {
@@ -44,7 +44,7 @@ public class CustomerDaoImpl implements CustomerDao{
 			i = pst.executeUpdate();
 			// Get last id
 			ResultSet rs2 = pst.getGeneratedKeys();
-			if (rs.next()) {
+			if (rs2.next()) {
 				i = rs2.getInt(1);
 			}
 			return i;
@@ -73,6 +73,37 @@ public class CustomerDaoImpl implements CustomerDao{
 	public Customer getById(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Customer login(String username, String password) {
+		Customer cObj = null;
+
+		try {
+			String SQL = "SELECT * FROM customer WHERE customerEmail=? AND customerPassword=?";
+			conn.open();
+			PreparedStatement pst = conn.initStatement(SQL);
+			pst.setString(1, username);
+			pst.setString(2, password);
+
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				cObj = new Customer();
+				cObj.setName(rs.getString("customerName"));
+				cObj.setPhone(rs.getString("customerPhone"));
+				cObj.setCity(rs.getString("customerCity"));
+				cObj.setState(rs.getString("customerState"));
+				cObj.setZip(rs.getString("customerZip"));
+				cObj.setEmail(rs.getString("customerEmail"));
+				cObj.setId(rs.getInt("customerId"));
+			}
+			conn.close();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return cObj;
 	}
 
 }

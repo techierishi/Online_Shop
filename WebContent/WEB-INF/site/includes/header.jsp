@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="top_left">
 				<ul>
 					<li class="top_link">Email:<a href="mailto:info@example.com">info@example.com</a></li>|
-					<li class="top_link"><a href="site/login.jsp">My Account</a></li>					
+					<li class="top_link"><a href="${pageContext.request.contextPath}/user/login">My Account</a></li>					
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -73,13 +73,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header_top">
 	<div class="container">
 		<div class="logo">
-		 	<a href="index.html">Pendent Store</a>			 
+		 	<a href="${pageContext.request.contextPath}">Pendent Store</a>			 
 		</div>
 		<div class="header_right">
 			<div class="cart box_1">
-				<a href="site/checkout.jsp">
+				<a href="${pageContext.request.contextPath}/customer/cart/list">
 				<h3> <div class="total">
-					<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+					(<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
 					<img src="${pageContext.request.contextPath}/assets_site/images/cart1.png" alt=""/></h3>
 				</a>
 				<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
@@ -96,11 +96,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="menu_sec">
 		 <!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="index.jsp">Home</a></li>
-			<li class="grid"><a class="color1" href="#">Products</a>
+			<li class="active grid"><a class="color1" href="${pageContext.request.contextPath}">Home</a></li>
+			<li class="grid"><a class="color1" href="${pageContext.request.contextPath}/product/list">Products</a>
 				
 			</li>
-			<li><a class="color1" href="#">Cart</a>
+			<li><a class="color1" href="${pageContext.request.contextPath}/customer/cart/list">Cart</a>
 			</li>				
 			<li><a class="color1" href="#">Contact</a>
 			</li>

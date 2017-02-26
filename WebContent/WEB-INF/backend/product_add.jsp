@@ -94,7 +94,7 @@
 
 
 								<button type="submit" class="btn btn-primary"
-									onClick="validateForm(); return false;">Submit Button</button>
+								>Submit Button</button>
 								<button type="reset" class="btn btn-default">Reset
 									Button</button>
 
