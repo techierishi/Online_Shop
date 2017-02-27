@@ -1,6 +1,7 @@
 package com.ekart.user.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,12 +33,12 @@ public class CartServlet extends HttpServlet {
 		CartDao cDao = new CartDaoImpl();
 		HttpSession session = request.getSession();
 		Customer cObj = (Customer) session.getAttribute("customer");
+		int uid = cObj.getId();
 
 		if (null != pathInfo && pathInfo.equalsIgnoreCase("/add")) {
 			String pid = request.getParameter("pid");
 			String quantity = request.getParameter("quantity");
-			int uid = cObj.getId();
-			String pName = "";
+			String pName = request.getParameter("pname");
 
 			Cart cart = new Cart();
 			cart.setPid(Integer.parseInt(pid));
@@ -55,8 +56,24 @@ public class CartServlet extends HttpServlet {
 			}
 
 		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/list")) {
+
+			try {
+				List<Cart> cList = cDao.getAllByUid(uid);
+				request.setAttribute("cart_list", cList);
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+
 			request.getRequestDispatcher(Const.SITE + "checkout.jsp").forward(request, response);
 
+		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/count")) {
+			try {
+				int iquantity = cDao.totalQuantity(cDao.getAllByUid(uid));
+				response.getWriter().append("" + iquantity);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 

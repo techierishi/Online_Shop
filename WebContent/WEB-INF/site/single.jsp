@@ -32,7 +32,7 @@
 				});
 			</script>
 			<div class="details-left-info">
-				<h3>
+				<h3 id="pname">
 					<c:out value="${product.productName}" />
 				</h3>
 				<h4>Pellentesque pretium</h4>
@@ -128,10 +128,11 @@
 	$("#add_to_cart").click(function() {
 		var pId = $("#pid").val();
 		var quantity = $("#quantity").val();
+		var pname = $("#pname").html();
 		
 		var saveData = $.ajax({
 			type : 'GET',
-			url : "${pageContext.request.contextPath}/customer/cart/add?pid=" + pId+"&quantity="+quantity,
+			url : "${pageContext.request.contextPath}/customer/cart/add?pid=" + pId+"&quantity="+quantity+"&pname="+pname,
 			dataType : "text",
 			success : function(resultData) {
 				console.log(resultData);

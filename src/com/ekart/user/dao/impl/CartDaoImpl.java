@@ -78,7 +78,7 @@ public class CartDaoImpl implements CartDao {
 			pst.setInt(1, uid);
 
 			ResultSet rs = pst.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				Cart cObj = new Cart();
 				cObj.setProductName(rs.getString("productName"));
 				cObj.setQuantity(rs.getInt("quantity"));
