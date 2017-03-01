@@ -9,4 +9,5 @@ public interface CartDao extends GenericDAO<Cart>  {
 	
     public List<Cart> getAllByUid(int uid) throws SQLException;
     public int totalQuantity(List<Cart> cListObj);
+    public int deleteCartByUid(int uid);
 }

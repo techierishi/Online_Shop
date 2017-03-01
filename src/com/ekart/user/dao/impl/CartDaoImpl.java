@@ -24,10 +24,8 @@ public class CartDaoImpl implements CartDao {
 		int i = 0;
 		String SQL = "";
 		conn.open();
-		PreparedStatement pst = conn.initStatement(SQL);
-
+		PreparedStatement pst = null;
 		SQL = "INSERT INTO  `cart` (`pid` ,`uid` ,`quantity` ,`productName`) VALUES (?,?,?,?);";
-		conn.open();
 		pst = conn.initStatement(SQL);
 		pst.setInt(1, t.getPid());
 		pst.setInt(2, t.getUid());
@@ -57,7 +55,6 @@ public class CartDaoImpl implements CartDao {
 
 	@Override
 	public int delete(int id) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -105,5 +102,26 @@ public class CartDaoImpl implements CartDao {
 
 		return qty;
 
+	}
+
+	@Override
+	public int deleteCartByUid(int uid) {
+		int del = 0;
+		try {
+			// delete all
+			conn.open();
+			PreparedStatement pst = null;
+			String SQL = "DELETE FROM `cart` WHERE uid=?;";
+			pst = conn.initStatement(SQL);
+			pst.setInt(1, uid);
+			del = pst.executeUpdate();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return del;
 	}
 }

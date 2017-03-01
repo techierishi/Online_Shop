@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="com.ekart.util.Const" %>
+<%@ page import="com.ekart.util.Const"%>
 
 
 <!DOCTYPE html>
@@ -20,8 +20,10 @@
 	content="Pendent Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript">
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } 
+
 </script>
 <!-- //for-mobile-apps -->
 <link
@@ -30,6 +32,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link
 	href="${pageContext.request.contextPath}/assets_site/css/style.css"
 	rel="stylesheet" type="text/css" media="all" />
+
+<link
+	href="${pageContext.request.contextPath}/assets_site/css/sweetalert.css"
+	rel="stylesheet">
 <!-- js -->
 <script
 	src="${pageContext.request.contextPath}/assets_site/js/jquery-1.11.1.min.js"></script>
@@ -90,14 +96,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class="top_link">Email:<a href="mailto:info@example.com">info@example.com</a></li>|
 
 						<%
-						boolean isLoggedIn = Const.isLin(request);
+							boolean isLoggedIn = Const.isLin(request);
 						%>
 
 						<%
 							if (isLoggedIn) {
 						%>
 						<li class="top_link"><a
-							href="${pageContext.request.contextPath}/user/profile">Profile</a></li>
+							href="${pageContext.request.contextPath}/user/logout">Logout</a></li>
 						<%
 							} else {
 						%>

@@ -23,7 +23,7 @@
 					<h3>New Registration</h3>
 					<div class="strip"></div>
 					<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-					<a href="${pageContext.request.contextPath}/user/resiter" class="button">Create An Account</a>
+					<a href="${pageContext.request.contextPath}/user/register" class="button">Create An Account</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>

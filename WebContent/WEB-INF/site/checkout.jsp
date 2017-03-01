@@ -26,7 +26,7 @@
 		<div class="clearfix"></div>
 		<div class="col-md-3">
 
-			<a class="order" href="#">Place Order</a>
+			<a class="order" href="${pageContext.request.contextPath}/customer/cart/place_order">Place Order</a>
 		</div>
 	</div>
 </div>

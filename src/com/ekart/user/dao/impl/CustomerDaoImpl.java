@@ -35,10 +35,10 @@ public class CustomerDaoImpl implements CustomerDao {
 			pst.setString(1, entityObj.getName());
 			pst.setInt(2, Integer.parseInt(entityObj.getPhone()));
 			pst.setString(3, entityObj.getEmail());
-			pst.setString(4, "");
-			pst.setString(5, "null");
-			pst.setString(6, "null");
-			pst.setString(7, "null");
+			pst.setString(4, entityObj.getAddress());
+			pst.setString(5, entityObj.getState());
+			pst.setString(6, entityObj.getCity());
+			pst.setString(7, entityObj.getZip());
 			pst.setString(8, "" + entityObj.getPassword());
 			conn.close();
 			i = pst.executeUpdate();

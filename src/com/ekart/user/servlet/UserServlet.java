@@ -36,6 +36,17 @@ public class UserServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}else if (null != pathInfo && pathInfo.equalsIgnoreCase("/logout")) {
+			try {
+
+				HttpSession session = request.getSession();
+				session.invalidate();
+				
+				response.sendRedirect(getServletContext().getContextPath()+"?msg=Successfully logged out..");
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 	}
@@ -54,6 +65,10 @@ public class UserServlet extends HttpServlet {
 				cust.setEmail(request.getParameter("email"));
 				cust.setPhone(request.getParameter("phone"));
 				cust.setPassword(request.getParameter("password"));
+				cust.setAddress(request.getParameter("address"));
+				cust.setState(request.getParameter("state"));
+				cust.setCity(request.getParameter("city"));
+				cust.setZip(request.getParameter("zip"));
 
 				int ret = customerDao.insert(cust);
 				response.sendRedirect(request.getContextPath() + "/user/register?msg=Registration Successfull");

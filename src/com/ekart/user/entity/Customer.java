@@ -9,6 +9,23 @@ package com.ekart.user.entity;
  */
 public class Customer {
 	String name;
+	String email;
+	String phone;
+	String address;
+	String state;
+	String city;
+	String zip; 
+	String password;
+	int id;
+	
+	
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getName() {
 		return name;
 	}
@@ -51,13 +68,7 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	String email;
-	String phone;
-	String state;
-	String city;
-	String zip; 
-	String password;
-	int id;
+	
 	public int getId() {
 		return id;
 	}

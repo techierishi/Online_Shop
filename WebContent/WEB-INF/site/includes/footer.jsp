@@ -64,6 +64,18 @@
 	}
 </script>
 
+<script
+	src="${pageContext.request.contextPath}/assets_site/js/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+	
+<%if (request.getParameter("msg") != null && !((String) request.getParameter("msg")).isEmpty()) {%>
+	swal("Message!", "<%=request.getParameter("msg")%>", "success")
+<%}%>
+	
+</script>
+
+
 <!-- //footer -->
 </body>
 </html>

@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ekart.user.dao.CartDao;
+import com.ekart.user.dao.OrderDao;
 import com.ekart.user.dao.impl.CartDaoImpl;
+import com.ekart.user.dao.impl.OrderDaoImpl;
+import com.ekart.user.entity.Card;
 import com.ekart.user.entity.Cart;
 import com.ekart.user.entity.Customer;
+import com.ekart.user.entity.Order;
 import com.ekart.util.Const;
 
 /**
@@ -74,6 +78,15 @@ public class CartServlet extends HttpServlet {
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
+		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/place_order")) {
+			try {
+
+				request.setAttribute("customer", cObj);
+				request.getRequestDispatcher(Const.SITE + "payment.jsp").forward(request, response);
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 
@@ -88,6 +101,54 @@ public class CartServlet extends HttpServlet {
 			String pid = request.getParameter("pid");
 			String quantity = request.getParameter("quantity");
 			response.getWriter().append(quantity);
+		} else if (null != pathInfo && pathInfo.equalsIgnoreCase("/confirm_order")) {
+			try {
+
+				CartDao cDao = new CartDaoImpl();
+				OrderDao oDao = new OrderDaoImpl();
+				HttpSession session = request.getSession();
+				Customer cObj = (Customer) session.getAttribute("customer");
+				int uid = cObj.getId();
+
+				Order orderObj = new Order();
+				orderObj.setCustomerId(uid);
+				orderObj.setOrderStatus("placed");
+
+				String payment = request.getParameter("payment");
+				if (payment != null && payment.equals("payment")) {
+
+					String card_type = request.getParameter("card_type");
+					String card_number = request.getParameter("card_number");
+					String card_cvv = request.getParameter("card_cvv");
+
+					Card card = new Card();
+
+					card.setUid(uid);
+					card.setCard_type(card_type);
+					card.setCart_number(card_number);
+					card.setCart_cvv(card_cvv);
+
+					oDao.insertCard(card);
+
+					orderObj.setPaymentType("card");
+
+				} else {
+					orderObj.setPaymentType("cod");
+
+				}
+				
+				int oid = oDao.insert(orderObj);
+				orderObj.setOrderId(oid);
+				List<Cart> cList = cDao.getAllByUid(uid);
+
+				oDao.insertLineItem(orderObj, cList);
+				
+				cDao.deleteCartByUid(uid);
+				
+				response.sendRedirect(getServletContext().getContextPath()+"?msg=Order Successfull..");
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 	}
 

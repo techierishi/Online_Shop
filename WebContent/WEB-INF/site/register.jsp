@@ -42,6 +42,22 @@
 					<li class="text-info">Mobile Number:</li>
 					<li><input name="phone" type="text" value=""></li>
 				</ul>
+				<ul>
+					<li class="text-info">Address :</li>
+					<li><input name="address" type="text" value=""></li>
+				</ul>
+				<ul>
+					<li class="text-info">State:</li>
+					<li><input name="state" type="text" value=""></li>
+				</ul>
+				<ul>
+					<li class="text-info">City:</li>
+					<li><input name="city" type="text" value=""></li>
+				</ul>
+				<ul>
+					<li class="text-info">Zip:</li>
+					<li><input name="zip" type="text" value=""></li>
+				</ul>
 				<input type="submit" value="Register Now">
 				<p class="click">
 					By clicking this button, you are agree to my <a href="#">Policy
